@@ -1,0 +1,7 @@
+{
+  "products": [
+    { "id": 1, "name": "Bligarn Bag", "price": 50.59 },
+    { "id": 2, "name": "Sword of Gallagorn", "price": 109.29 },
+    { "id": 3, "name": "Old Man Goro's Shield", "price": 79.99 }
+  ]
+}
