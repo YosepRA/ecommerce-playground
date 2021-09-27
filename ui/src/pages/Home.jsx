@@ -39,7 +39,7 @@ function Home() {
                   <AddShoppingCartIcon />
                 )
               }
-              disabled={isAddedToCart}
+              disabled={!!isAddedToCart}
               onClick={() => handleAddItem(p)}
             >
               {isAddedToCart ? 'Item added' : 'Add to cart'}

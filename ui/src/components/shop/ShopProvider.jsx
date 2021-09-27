@@ -11,26 +11,32 @@ function ShopProvider({ children }) {
 
   useEffect(() => {
     const loadData = async () => {
-      const response = await fetch(`${VITE_API_ENDPOINT}/json/products`);
-      const data = await response.json();
+      const productsData = await fetch(
+        `${VITE_API_ENDPOINT}/json/products`,
+      ).then((res) => res.json());
+      const cartData = await fetch(`${VITE_API_ENDPOINT}/json/cart`).then(
+        (res) => res.json(),
+      );
 
-      setProducts(data);
-
-      // Only for development. Delete later.
-      // const cartItems = data
-      //   .slice(0, 3)
-      //   .map((item) => ({ ...item, amount: 1 }));
-      // setCart(cartItems);
+      setProducts(productsData);
+      setCart(cartData);
     };
 
     loadData();
   }, []);
 
-  const handleAddItem = (product) => {
-    setCart((prevCart) => {
-      const productWithAmount = { ...product, amount: 1 };
-      return prevCart.concat(productWithAmount);
+  const handleAddItem = async (product) => {
+    const productWithAmount = { ...product, amount: 1 };
+
+    await fetch(`${VITE_API_ENDPOINT}/json/cart`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(productWithAmount),
     });
+
+    setCart((prevCart) => prevCart.concat(productWithAmount));
   };
 
   const handleAmountChange = (id, amount) => {
@@ -42,7 +48,11 @@ function ShopProvider({ children }) {
     );
   };
 
-  const handleRemoveItem = (id) => {
+  const handleRemoveItem = async (id) => {
+    await fetch(`${VITE_API_ENDPOINT}/json/cart/${id}`, {
+      method: 'DELETE',
+    });
+
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 

@@ -1,9 +1,37 @@
 {
   "products": [
-    { "id": 1, "name": "Bligarn Bag", "price": 50.59 },
-    { "id": 2, "name": "Sword of Gallagorn", "price": 109.29 },
-    { "id": 3, "name": "Old Man Goro's Shield", "price": 79.99 },
-    { "id": 4, "name": "Chainmail of Bensons", "price": 42.2 },
-    { "id": 5, "name": "Perseus' Flying Shoes", "price": 99.89 }
+    {
+      "id": 1,
+      "name": "Bligarn Bag",
+      "price": 50.59
+    },
+    {
+      "id": 2,
+      "name": "Sword of Gallagorn",
+      "price": 109.29
+    },
+    {
+      "id": 3,
+      "name": "Old Man Goro's Shield",
+      "price": 79.99
+    },
+    {
+      "id": 4,
+      "name": "Chainmail of Bensons",
+      "price": 42.2
+    },
+    {
+      "id": 5,
+      "name": "Perseus' Flying Shoes",
+      "price": 99.89
+    }
+  ],
+  "cart": [
+    {
+      "id": 2,
+      "name": "Sword of Gallagorn",
+      "price": 109.29,
+      "amount": 1
+    }
   ]
 }

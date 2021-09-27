@@ -24,6 +24,16 @@ function Cart() {
 
   const AMOUNT_MIN = 1;
   const AMOUNT_MAX = 100;
+  const subtotal = fixedTwoDecimals(
+    cart.reduce((total, item) => {
+      const itemTotalPrice = item.price * item.amount;
+      const newTotal = total + itemTotalPrice;
+
+      return newTotal;
+    }, 0),
+  );
+  const tax = fixedTwoDecimals((10 / 100) * subtotal);
+  const total = fixedTwoDecimals(subtotal + tax);
 
   // Control amount to never exceed the range (0 > x <= 100).
   // This problem occur when user manually input item amount using keyboard instead of stepper.
@@ -34,6 +44,12 @@ function Cart() {
     else if (controlledValue > 100) controlledValue = AMOUNT_MAX;
 
     handleAmountChange(productId, controlledValue);
+  };
+
+  const handleCheckout = () => {
+    console.log('Subtotal:', subtotal);
+    console.log('Tax:', tax);
+    console.log('Total:', total);
   };
 
   const cartItems = cart.map(({ id, name, price, amount }) => (
@@ -76,17 +92,6 @@ function Cart() {
       </CardActions>
     </Card>
   ));
-
-  const subtotal = fixedTwoDecimals(
-    cart.reduce((total, item) => {
-      const itemTotalPrice = item.price * item.amount;
-      const newTotal = total + itemTotalPrice;
-
-      return newTotal;
-    }, 0),
-  );
-  const tax = fixedTwoDecimals((10 / 100) * subtotal);
-  const total = fixedTwoDecimals(subtotal + tax);
 
   return (
     <Grid container spacing={3}>
@@ -134,7 +139,7 @@ function Cart() {
           </Grid>
         </Paper>
 
-        <Button size="large" variant="outlined">
+        <Button size="large" variant="outlined" onClick={handleCheckout}>
           Checkout
         </Button>
       </Grid>
