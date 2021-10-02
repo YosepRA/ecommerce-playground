@@ -39,6 +39,8 @@ function ShopProvider({ children }) {
     setCart((prevCart) => prevCart.concat(productWithAmount));
   };
 
+  /* There is no need to update database on amount change. App will start with the 
+  amount of "1" for each product in cart. */
   const handleAmountChange = (id, amount) => {
     setCart(
       immer((draft) => {
@@ -56,6 +58,18 @@ function ShopProvider({ children }) {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
+  const emptyCart = async () => {
+    // Clear cart items from DB too.
+    const deleteCartItem = async (id) => {
+      await fetch(`${VITE_API_ENDPOINT}/json/cart/${id}`, {
+        method: 'DELETE',
+      });
+    };
+    await Promise.all(cart.map((item) => deleteCartItem(item.id)));
+
+    setCart([]);
+  };
+
   return (
     <ShopContext.Provider
       value={{
@@ -64,6 +78,7 @@ function ShopProvider({ children }) {
         handleAddItem,
         handleAmountChange,
         handleRemoveItem,
+        emptyCart,
       }}
     >
       {children}

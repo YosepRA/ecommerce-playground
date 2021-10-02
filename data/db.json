@@ -3,35 +3,184 @@
     {
       "id": 1,
       "name": "Bligarn Bag",
-      "price": 50.59
+      "price": 0.59
     },
     {
       "id": 2,
       "name": "Sword of Gallagorn",
-      "price": 109.29
+      "price": 1.29
     },
     {
       "id": 3,
       "name": "Old Man Goro's Shield",
-      "price": 79.99
+      "price": 2.99
     },
     {
       "id": 4,
       "name": "Chainmail of Bensons",
-      "price": 42.2
+      "price": 1.2
     },
     {
       "id": 5,
       "name": "Perseus' Flying Shoes",
-      "price": 99.89
+      "price": 1.09
     }
   ],
-  "cart": [
+  "cart": [],
+  "orders": [
     {
-      "id": 2,
-      "name": "Sword of Gallagorn",
-      "price": 109.29,
-      "amount": 1
+      "createTime": "2021-10-02T12:47:08Z",
+      "transactionId": "4GK47640Y6886142L",
+      "type": "paypal",
+      "items": [
+        {
+          "id": 4,
+          "name": "Chainmail of Bensons",
+          "price": 1.2,
+          "amount": 2
+        },
+        {
+          "id": 1,
+          "name": "Bligarn Bag",
+          "price": 0.59,
+          "amount": 1
+        }
+      ],
+      "total": {
+        "currency_code": "USD",
+        "value": "3.29"
+      },
+      "shipping": {
+        "address": {
+          "address_line_1": "Jl Senopati 1",
+          "admin_area_2": "Jakarta",
+          "admin_area_1": "Jakarta",
+          "postal_code": "12110",
+          "country_code": "ID"
+        },
+        "name": "John Doe"
+      },
+      "id": 1
+    },
+    {
+      "createTime": "2021-10-02T12:52:18Z",
+      "transactionId": "4AR0155991843652B",
+      "type": "paypal",
+      "items": [
+        {
+          "id": 4,
+          "name": "Chainmail of Bensons",
+          "price": 1.2,
+          "amount": 1
+        },
+        {
+          "id": 2,
+          "name": "Sword of Gallagorn",
+          "price": 1.29,
+          "amount": 2
+        }
+      ],
+      "total": {
+        "currency_code": "USD",
+        "value": "4.16"
+      },
+      "shipping": {
+        "address": {
+          "address_line_1": "Jl Senopati 1",
+          "admin_area_2": "Jakarta",
+          "admin_area_1": "Jakarta",
+          "postal_code": "12110",
+          "country_code": "ID"
+        },
+        "name": "John Doe"
+      },
+      "id": 2
+    },
+    {
+      "createTime": "2021-10-02T12:53:00Z",
+      "transactionId": "3LD28452Y61687135",
+      "type": "paypal",
+      "items": [
+        {
+          "id": 1,
+          "name": "Bligarn Bag",
+          "price": 0.59,
+          "amount": 1
+        },
+        {
+          "id": 2,
+          "name": "Sword of Gallagorn",
+          "price": 1.29,
+          "amount": 1
+        },
+        {
+          "id": 4,
+          "name": "Chainmail of Bensons",
+          "price": 1.2,
+          "amount": 1
+        },
+        {
+          "id": 3,
+          "name": "Old Man Goro's Shield",
+          "price": 2.99,
+          "amount": 1
+        },
+        {
+          "id": 5,
+          "name": "Perseus' Flying Shoes",
+          "price": 1.09,
+          "amount": 1
+        }
+      ],
+      "total": {
+        "currency_code": "USD",
+        "value": "7.88"
+      },
+      "shipping": {
+        "address": {
+          "address_line_1": "Jl Senopati 1",
+          "admin_area_2": "Jakarta",
+          "admin_area_1": "Jakarta",
+          "postal_code": "12110",
+          "country_code": "ID"
+        },
+        "name": "John Doe"
+      },
+      "id": 3
+    },
+    {
+      "createTime": "2021-10-02T12:54:52Z",
+      "transactionId": "0E063062XK073994G",
+      "type": "paypal",
+      "items": [
+        {
+          "id": 1,
+          "name": "Bligarn Bag",
+          "price": 0.59,
+          "amount": 1
+        },
+        {
+          "id": 2,
+          "name": "Sword of Gallagorn",
+          "price": 1.29,
+          "amount": 1
+        }
+      ],
+      "total": {
+        "currency_code": "USD",
+        "value": "2.07"
+      },
+      "shipping": {
+        "address": {
+          "address_line_1": "Jl Senopati 1",
+          "admin_area_2": "Jakarta",
+          "admin_area_1": "Jakarta",
+          "postal_code": "12110",
+          "country_code": "ID"
+        },
+        "name": "John Doe"
+      },
+      "id": 4
     }
   ]
 }

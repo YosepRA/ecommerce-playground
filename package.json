@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon -w .env -w . app.js",
+    "dev": "nodemon -w .env -w . --ignore data/ app.js",
     "start": "node app.js"
   },
   "repository": {
